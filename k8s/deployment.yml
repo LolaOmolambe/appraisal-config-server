@@ -15,6 +15,6 @@ spec:
       containers:
         - name: appraisal-config-server-app
           image: lolalambe/appraisal-config-server:0.0.1-SNAPSHOT
-          imagePullPolicy: ifNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8888
