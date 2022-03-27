@@ -17,4 +17,4 @@ spec:
           image: lolalambe/appraisal-config-server:0.0.1-SNAPSHOT
           imagePullPolicy: ifNotPresent
           ports:
-            - containerPost: 8888
+            - containerPort: 8888
