@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appraisal-config-server-app
+spec:
+  selector:
+    matchLabels:
+      app: appraisal-config-server-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: appraisal-config-server-app
+    spec:
+      containers:
+        - name: appraisal-config-server-app
+          image: lolalambe/appraisal-config-server:0.0.1-SNAPSHOT
+          imagePullPolicy: ifNotPresent
+          ports:
+            - containerPost: 8888
