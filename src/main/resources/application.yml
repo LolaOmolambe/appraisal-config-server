@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LolaOmolambe/appraisal-config-files
+          username:  ${GIT_USER}
+          password:  ${GIT_PERSONAL_ACCESS_TOKEN}
+          clone-on-start: true
+
+server:
+  port: 8888
+
