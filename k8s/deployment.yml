@@ -1,12 +1,13 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: appraisal-config-server-app
 spec:
+  serviceName: "appraisal-config-server-app"
+  replicas: 1
   selector:
     matchLabels:
       app: appraisal-config-server-app
-  replicas: 1
   template:
     metadata:
       labels:
@@ -16,6 +17,8 @@ spec:
         - name: appraisal-config-server-app
           image: lolalambe/appraisal-config-server:0.0.1-SNAPSHOT
           imagePullPolicy: Always
+          ports:
+            - containerPort: 8888
           env:
             - name: GIT_USERNAME
               valueFrom:
@@ -29,5 +32,3 @@ spec:
                   name: appraisal-secrets
                   key: GIT_PERSONAL_ACCESS_TOKEN
                   optional: false
-          ports:
-            - containerPort: 8888
