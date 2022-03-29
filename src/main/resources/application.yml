@@ -6,7 +6,7 @@ spring:
       server:
         git:
           uri: https://github.com/LolaOmolambe/appraisal-config-files
-          username:  ${GIT_USER}
+          username:  ${GIT_USERNAME}
           password:  ${GIT_PERSONAL_ACCESS_TOKEN}
           clone-on-start: true
 
